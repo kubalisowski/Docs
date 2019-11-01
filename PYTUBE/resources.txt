@@ -1,0 +1,2 @@
+### https://stackoverflow.com/questions/39845823/how-to-programmatically-check-if-a-live-youtube-channel-is-streaming
+### https://stackoverflow.com/questions/32454238/how-to-check-if-youtube-channel-is-streaming-live
