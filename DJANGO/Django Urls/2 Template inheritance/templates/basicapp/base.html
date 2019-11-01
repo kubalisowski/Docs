@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- Bootstrap link -- also all css code might be saved in static folder -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Boostrap navigation bar -->
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <!-- just 'index' because it is declared in project urls.py -->
+                <li><a class="navbar-brand" href="{% url 'index' %}">BRAND</a></li>
+                <li><a class="navbar-link" href="{% url 'admin:index' %}">Admin</a></li>
+                <!-- 'basicapp:other' because mapping is declared in app urls.py -->
+                <li><a class="navbar-link" href="{% url 'basicapp:other' %}">Other</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        {% block body_block %}
+        <!-- Anything outside of block will be inherited while extend -->
+        {% endblock %}
+
+    </div>
+
+</body>
+</html>

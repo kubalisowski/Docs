@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<!-- "basicapp/..." is a subfolder of 'templates' folder (declared in settings.py) -->
+{% extends "basicapp/base.html" %}
+    <!-- everything inside the block will be in put inside block within base.html and displayed as one page -->
+    {% block body_block %}
+        <h1>WELCOME TO OTHER</h1>
+        <h2>Example of template inheritance!</h2>
+    {% endblock %}
