@@ -1,0 +1,71 @@
+===============================
+->>>> GIT 
+https://github.com/settings/tokens -> generete token
+git clone https://USERNAME:TOKEN@github.com/kubalisowski/PyApi.git
+git pull https://USERNAME:TOKEN@github.com/kubalisowski/PyApi.git
+---
+if EROR:fatal: detected dubious ownership in repository at ...
+sudo -i -> and retry operation
+===============================
+->>>> LINUX COMMANDS:
+-show where am i 	       : pwd 
+-check running processes       : ps -e
+-check process running on port : lsof -i :8000
+-kill process                  : kill -9 process_id
+-superuser                     : sudo -i
+-remove whole dir              : rm -rf dirname
+===============================
+(FIX)ERROR: externally-managed-environment
+cd /usr/lib/python3.11
+sudo rm EXTERNALLY-MANAGED
+===============================
+COPY WINDOWS >> LINUX:
+scp C:\_PY\api\* ubuntu@145.239.84.136:/home/ubuntu/rest_api/
+===============================
+->>>> DOCKER 
+->> CONTAINER:
+-remove      : docker rm name
+-remove all  : docker rm -v -f $(docker ps -qa)
+-stop        : docker stop name
+-show all    : docker ps -a 
+-start	     : docker run -it --name container_name -p 8080:8080 image_name
+-->> IMAGE:
+-remove	     : docker image rm image_name
+-remove all  : docker rmi -f $(docker images -aq)
+-create	     : docker build -t image_name
+================================
+REBOOT:
+sudo reboot
+===============================
+PYTHON: ANACONDA
+curl -O https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
+
+===============================
+PYTHON: ENV
+python3 -m venv the-env
+source ./the-env/bin/activate
+================================
+SERVER VISIBLE TO WORLD:
+https://www.youtube.com/watch?v=vfZgHX5ttsY&ab_channel=PrettyPrinted
+---
+-1-
+sudo apt update
+sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
+sudo apt update
+sudo apt install caddy
+-2-
+pip install gunicorn
+-3-
+-If error: "ERROR: Could not install packages due to an OSError: [Errno 13] Permission denied:'" :
+--sudo chmod -R a+rwx the-env -> [executed not in (env) then retry pip install gunicorn]
+-4-
+sudo caddy stop
+sudo caddy start
+-5-
+source ./the-env/bin/activate
+gunicorn main:app & -> main is filename; app is object name in .py file
+-6-
+Caddy runs on port :80 by default -> check below info
+INFO: "server is listening only on the HTTP port, so no automatic HTTPS will be applied to this server     {"server_name": "srv0", "http_port": 80}"
