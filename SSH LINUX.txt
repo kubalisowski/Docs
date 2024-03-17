@@ -15,7 +15,7 @@ sudo -i -> and retry operation
 -superuser                     : sudo -i
 -remove whole dir              : rm -rf dirname
 ===============================
-(FIX)ERROR: externally-managed-environment
+(FIX) ERROR: externally-managed-environment
 cd /usr/lib/python3.11
 sudo rm EXTERNALLY-MANAGED
 ===============================
@@ -39,7 +39,7 @@ sudo reboot
 ===============================
 PYTHON: ANACONDA
 curl -O https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
-
+(cmd open anaconda) anaconda-navigator
 ===============================
 PYTHON: ENV
 python3 -m venv the-env
@@ -64,7 +64,7 @@ pip install gunicorn
 sudo caddy stop
 sudo caddy start
 -5-
-source ./the-env/bin/activate
+source ./venv/bin/activate
 gunicorn main:app & -> main is filename; app is object name in .py file
 -6-
 Caddy runs on port :80 by default -> check below info
