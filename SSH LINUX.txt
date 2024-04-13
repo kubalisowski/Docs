@@ -7,11 +7,17 @@ git pull https://USERNAME:TOKEN@github.com/kubalisowski/PyApi.git
 if EROR:fatal: detected dubious ownership in repository at ...
 sudo -i -> and retry operation
 ===============================
+->>>> WINDOWS COMMANDS:
+-install only project req. : 
+	-pip install pipreqs
+	-pipreqs /path/to/your/project/
+===============================
 ->>>> LINUX COMMANDS:
 -show where am i 	       : pwd 
 -check running processes       : ps -e
 -check process running on port : lsof -i :8000
 -kill process                  : kill -9 process_id
+-kill process on port	       : kill -9 $(lsof -t -i:8080)
 -superuser                     : sudo -i
 -remove whole dir              : rm -rf dirname
 ===============================
