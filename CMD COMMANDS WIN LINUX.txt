@@ -12,6 +12,13 @@ sudo -i -> and retry operation
 	-pip install pipreqs
 	-pipreqs /path/to/your/project/
 ===============================
+WINDOWS MariaDB
+(cmd)
+cd C:\Program Files\MariaDB 11.4\bin
+mysql -u root -p
+show databases
+use [db_name] 
+===============================
 ->>>> LINUX COMMANDS:
 -show where am i 	       : pwd 
 -check running processes       : ps -e
